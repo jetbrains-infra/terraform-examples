@@ -29,7 +29,7 @@ module "ecs_cluster" {
 
 module "ecs_nodes_in_zone_1" {
   source               = "github.com/jetbrains-infra/terraform-aws-spot-fleet"
-  name                 = "UgdyzhekovsEcsCluster"
+  name                 = "ExampleEcsCluster"
   subnet_id            = "${module.vpc.subnet_private_1}"
   security_group_ids    = "${module.ecs_cluster.security_group},${module.bastion.security_group}"
   capacity             = "2"
@@ -45,7 +45,7 @@ EOT
 
 module "ecs_nodes_in_zone_2" {
   source               = "github.com/jetbrains-infra/terraform-aws-spot-fleet"
-  name                 = "UgdyzhekovsEcsCluster"
+  name                 = "ExampleEcsCluster"
   subnet_id            = "${module.vpc.subnet_private_2}"
   security_group_ids    = "${module.ecs_cluster.security_group},${module.bastion.security_group}"
   capacity             = "2"
